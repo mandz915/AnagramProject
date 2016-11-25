@@ -22,7 +22,6 @@ public class Anagram {
 			
 			while (iterator.hasNext()) {
 				matchingString = iterator.next();
-				if(!firstWord.matches(matchingString)){
 					if (matchingString.length() == firstWord.length()) {
 						
 						char[] string2Array = matchingString.toLowerCase().toCharArray();
@@ -41,24 +40,21 @@ public class Anagram {
 					} else {						
 						break;
 					}
-				}else {
-					del.add(firstWord);
-				}
-
 			}
-			if(!concatString.isEmpty()){
+			if(!del.isEmpty()){
 				finalList.add(concatString);
 				System.out.println(concatString);
 				concatString = "";
 				wordflag = false;
-				
+				wordList.removeAll(del);
+				del.clear();
 			}
 			wordList.removeAll(del);
 			del.clear();
 		}	
-		for(String x : finalList){
-			System.out.println(x);
-		}
+//		for(String x : finalList){
+//			System.out.println(x);
+//		}
 		return finalList;
 	}
 
