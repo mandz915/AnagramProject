@@ -49,8 +49,6 @@ public class Anagram {
 				wordList.removeAll(del);
 				del.clear();
 			}
-			wordList.removeAll(del);
-			del.clear();
 		}	
 //		for(String x : finalList){
 //			System.out.println(x);
