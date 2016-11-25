@@ -5,15 +5,16 @@ import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.stream.Stream;
 
 public class FileReader {
 	
 	
 	
-	public ArrayList<String> fileReader(){
+	public List<String> fileReader(){
 		String fileName = "./wordlist.txt";
-		ArrayList<String> listWords = new ArrayList<>();
+		List<String> listWords = new ArrayList<>();
 
 		try (Stream<String> stream = Files.lines(Paths.get(fileName), Charset.forName("ISO-8859-1"))) {
 
