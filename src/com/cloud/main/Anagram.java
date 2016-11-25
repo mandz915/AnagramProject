@@ -17,14 +17,14 @@ public class Anagram {
 		for (String firstWord : new ArrayList<String>(wordList)) {
 			wordList.remove(firstWord);
 			Iterator<String> iterator = wordList.iterator();
-			char[] string1Array = firstWord.toLowerCase().toCharArray();
+			char[] string1Array = firstWord.toCharArray();
 			Arrays.sort(string1Array);
 			
 			while (iterator.hasNext()) {
 				matchingString = iterator.next();
 					if (matchingString.length() == firstWord.length()) {
 						
-						char[] string2Array = matchingString.toLowerCase().toCharArray();
+						char[] string2Array = matchingString.toCharArray();
 						
 						Arrays.sort(string2Array);
 						if (Arrays.equals(string1Array, string2Array)) {
