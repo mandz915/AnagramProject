@@ -12,14 +12,14 @@ import com.cloud.main.FileReader;
 
 public class JunitTest {
 
-	//@Test  
-    public void testNotNull(){
-		
-		assertNotNull(new FileReader().fileReader());
-    }  
-	
 	@Test
-	public void testAnagram(){
+	public void testNotNull() {
+
+		assertNotNull(new FileReader().fileReader());
+	}
+
+	@Test
+	public void testAnagram() {
 		List<String> testList = new ArrayList<>();
 		testList.add("sort");
 		testList.add("rots");
@@ -32,13 +32,23 @@ public class JunitTest {
 		testList.add("listen");
 		testList.add("silent");
 		testList.add("boaters");
-		testList.add("refresh");		
-		testList.add("boaster"); 		
+		testList.add("refresh");
+		testList.add("boaster");
 		testList.add("borates");
 		testList.add("fresher");
 		testList.add("kinship");
-		testList.add("pinkish");		
+		testList.add("pinkish");
+		Anagram anagram = new Anagram();
+		assertNotNull(anagram.getAnagram(testList));
+
 		
-		assertNull(Anagram.getAnagram(testList));
-	}	
+	}
+	
+	@Test
+	public void filetest(){
+		Anagram anagram = new Anagram();
+		assertEquals(20683, anagram.getAnagram(new FileReader().fileReader()).size());
+		assertEquals(48162, anagram.getCountWords());
+	}
+	
 }
